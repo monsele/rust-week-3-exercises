@@ -155,7 +155,6 @@ impl Script {
         result.extend_from_slice(&self.bytes);
         result
     }
-
     pub fn from_bytes(bytes: &[u8]) -> Result<(Self, usize), BitcoinError> {
         let (length, length_bytes) = CompactSize::from_bytes(bytes)?;
         let script_length = length.value as usize;
